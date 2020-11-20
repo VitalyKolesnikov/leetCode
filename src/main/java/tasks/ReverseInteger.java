@@ -2,21 +2,15 @@ package tasks;
 
 public class ReverseInteger {
     public int reverse(int x) {
-        boolean positive = true;
-        if (x < 0) {
-            positive = false;
+        long reversed = 0, remainder, temp = x;
+        while (true) {
+            remainder = temp % 10;
+            reversed = reversed * 10 + remainder;
+            temp /= 10;
+            if (temp == 0) {
+                if (reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE) return 0;
+                return (int) reversed;
+            }
         }
-        String str = Integer.toString(x);
-        StringBuilder sb = new StringBuilder(str);
-        sb.reverse();
-        if (!positive) {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        long longResult = Long.parseLong(sb.toString());
-        if (longResult > Integer.MAX_VALUE) {
-            return 0;
-        }
-        int result = (int)longResult;
-        return positive ? result : result * -1;
     }
 }

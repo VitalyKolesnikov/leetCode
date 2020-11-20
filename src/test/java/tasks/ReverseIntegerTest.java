@@ -30,4 +30,9 @@ class ReverseIntegerTest {
         assertEquals(0, new ReverseInteger().reverse(0));
     }
 
+    @Test
+    void case6() {
+        assertEquals(0, new ReverseInteger().reverse(1534236469));
+    }
+
 }
