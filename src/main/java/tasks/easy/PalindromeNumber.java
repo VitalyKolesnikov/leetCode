@@ -1,4 +1,4 @@
-package tasks;
+package tasks.easy;
 
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {
