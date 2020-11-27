@@ -12,10 +12,6 @@ public class IntegerToRoman {
                 num -= ints[i];
                 result.append(romans[i]);
             }
-            if (num == 1) {
-                result.append("I");
-                break;
-            }
         }
         return result.toString();
     }
