@@ -1,7 +1,7 @@
 package tasks.easy;
 
 import org.junit.jupiter.api.Test;
-import tasks.easy.ReverseInteger;
+import tasks.medium.ReverseInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
 

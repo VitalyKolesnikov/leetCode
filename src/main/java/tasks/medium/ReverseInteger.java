@@ -1,4 +1,4 @@
-package tasks.easy;
+package tasks.medium;
 
 public class ReverseInteger {
     public int reverse(int x) {

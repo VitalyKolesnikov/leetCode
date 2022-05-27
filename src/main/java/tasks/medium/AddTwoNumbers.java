@@ -9,7 +9,9 @@ public class AddTwoNumbers {
     }
 
     public ListNode addWithCarry(ListNode l1, ListNode l2, boolean carry) {
-        if (l1 == null && l2 == null) return (!carry) ? null : new ListNode(1);
+        if (l1 == null && l2 == null) {
+            return (!carry) ? null : new ListNode(1);
+        }
         int sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
         return new ListNode((carry ? ++sum : sum) % 10, addWithCarry(l1 == null ? null : l1.next, l2 == null ? null : l2.next, sum > 9));
     }
@@ -37,8 +39,7 @@ public class AddTwoNumbers {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             ListNode listNode = (ListNode) o;
-            return val == listNode.val &&
-                    Objects.equals(next, listNode.next);
+            return val == listNode.val && Objects.equals(next, listNode.next);
         }
 
         @Override
