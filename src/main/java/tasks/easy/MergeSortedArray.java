@@ -7,17 +7,14 @@ import java.util.stream.Stream;
 
 public class MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        List<Integer> list1 = Arrays.stream(nums1)
-                .boxed()
-                .limit(m)
-                .collect(Collectors.toList());
-
-        List<Integer> list2 = Arrays.stream(nums2)
-                .boxed()
-                .limit(n)
-                .collect(Collectors.toList());
-
-        List<Integer> resultList = Stream.concat(list1.stream(), list2.stream())
+        List<Integer> resultList = Stream.concat(
+                        Arrays.stream(nums1)
+                                .boxed()
+                                .limit(m),
+                        Arrays.stream(nums2)
+                                .boxed()
+                                .limit(n)
+                )
                 .sorted()
                 .collect(Collectors.toList());
 
